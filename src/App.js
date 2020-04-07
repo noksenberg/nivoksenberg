@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import { Router } from "@reach/router";
