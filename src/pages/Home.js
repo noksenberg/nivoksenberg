@@ -185,7 +185,7 @@ const Home = () => {
                   <b>{lang === 0 ? "Hello" : "Hola"}</b>
                 </Typography>
                 <Typography variant="h2" gutterBottom>
-                  <b>{lang === 0 ? "WORLD" : "MUNDO"}</b>.
+                  {lang === 0 ? "WORLD" : "MUNDO"}.
                 </Typography>
               </div>
               <div>
@@ -198,16 +198,32 @@ const Home = () => {
               {thirdParagraph(lang)}
             </div>
             <div className={classes.socialMedia}>
-              <IconButton>
+              <IconButton
+                href="https://www.linkedin.com/in/nivoksenberg/"
+                target="_blank"
+                rel="noopener"
+              >
                 <LinkedInIcon fontSize="large" />
               </IconButton>
-              <IconButton>
+              <IconButton
+                href="https://github.com/noksenberg"
+                target="_blank"
+                rel="noopener"
+              >
                 <GitHubIcon fontSize="large" />
               </IconButton>
-              <IconButton>
+              <IconButton
+                href="https://www.instagram.com/nivoksenberg/"
+                target="_blank"
+                rel="noopener"
+              >
                 <InstagramIcon fontSize="large" />
               </IconButton>
-              <IconButton>
+              <IconButton
+                href="https://www.facebook.com/niv.oksenberg"
+                target="_blank"
+                rel="noopener"
+              >
                 <FacebookIcon fontSize="large" />
               </IconButton>
             </div>
