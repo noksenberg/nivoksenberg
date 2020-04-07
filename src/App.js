@@ -20,7 +20,13 @@ const App = () => {
           setLang={setLang}
           lang={lang}
         />
-        <Portfolio path="/portfolio" />
+        <LayoutWrapper
+          path="/portfolio"
+          component={Portfolio}
+          layout={Layout}
+          setLang={setLang}
+          lang={lang}
+        />
       </Router>
     </React.StrictMode>
   );

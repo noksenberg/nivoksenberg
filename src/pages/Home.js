@@ -1,4 +1,6 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import ContentWrapper from "./components/ContentWrapper";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
@@ -6,13 +8,14 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { makeStyles } from "@material-ui/core/styles";
-import avatar from "./../../avatar.jpg";
+import avatar from "./../../assets/avatar.jpg";
+import { Link } from "@reach/router";
 
 const useStyles = makeStyles(theme => ({
   titleWrapper: {
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alightItems: "center"
   },
   avatar: {
     margin: "10%",
@@ -20,15 +23,8 @@ const useStyles = makeStyles(theme => ({
     height: theme.spacing(15),
 
     [theme.breakpoints.down("md")]: {
-      width: theme.spacing(7),
-      height: theme.spacing(7)
-    }
-  },
-  textWrapper: {
-    margin: "0 5% 0 5%",
-
-    [theme.breakpoints.up("md")]: {
-      margin: "0 10% 0 10%"
+      width: theme.spacing(10),
+      height: theme.spacing(10)
     }
   },
   socialMedia: {
@@ -77,7 +73,11 @@ const Home = props => {
           <i>fun</i>) initiatives. I'm specially attracted to{" "}
           <b>big and impactful</b> projects that aspire to be used on a global
           scale. I believe that, if well used, technology can make people's life
-          better and easier. You can check some of my work <u>here</u>.
+          better and easier. You can check some of my work{" "}
+          <Link to="/portfolio">
+            <u>here</u>
+          </Link>
+          .
         </Typography>
       );
     } else if (props.lang === 1) {
@@ -88,8 +88,11 @@ const Home = props => {
           iniciativas personales de menor tamaño. Me atraen en particular los
           proyectos con <b>ambición global</b>. Creo firmemente que la
           tecnología, si se usa de manera correcta, puede hacer la vida de las
-          personas mejor y más simple. <u>Aquí</u> puedes ver una muestra de mi
-          trabajo.
+          personas mejor y más simple.{" "}
+          <Link to="/portfolio">
+            <u>Aquí</u>
+          </Link>{" "}
+          puedes ver una muestra de mi trabajo.
         </Typography>
       );
     }
@@ -112,7 +115,7 @@ const Home = props => {
   };
 
   return (
-    <div className={classes.textWrapper}>
+    <ContentWrapper>
       <div className={classes.titleWrapper}>
         <div>
           <Typography variant="h2">
@@ -161,7 +164,7 @@ const Home = props => {
           <FacebookIcon fontSize="large" />
         </IconButton>
       </div>
-    </div>
+    </ContentWrapper>
   );
 };
 
