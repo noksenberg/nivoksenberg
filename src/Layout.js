@@ -1,9 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import WorkIcon from "@material-ui/icons/Work";
 import Tooltip from "@material-ui/core/Tooltip";
 import Fab from "@material-ui/core/Fab";
 import CloseIcon from "@material-ui/icons/Close";
-import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,13 +25,14 @@ const useStyles = makeStyles(theme => ({
     }
   },
   header: {
-    marginTop: "3%",
+    margin: "2% 2% 0 2%",
     display: "flex",
     justifyItems: "center",
     justifyContent: "space-between"
   },
   tooltip: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
+    padding: "0"
   }
 }));
 
@@ -42,20 +44,24 @@ const Layout = props => {
       <div className={classes.outerCard}>
         <div className={classes.cardWrapper}>
           <div className={classes.header}>
-            <div />
+            <div>
+              <IconButton className={classes.tooltip} aria-label="portfolio">
+                <WorkIcon fontSize="large" />
+              </IconButton>
+            </div>
             <div>
               <Tooltip
                 className={classes.tooltip}
-                title="EN"
-                aria-label="EN"
+                title="English"
+                aria-label="English"
                 onClick={() => props.setLang(0)}
               >
                 <Fab size="small">EN</Fab>
               </Tooltip>
               <Tooltip
                 className={classes.tooltip}
-                title="ES"
-                aria-label="ES"
+                title="Español"
+                aria-label="Español"
                 onClick={() => props.setLang(1)}
               >
                 <Fab size="small">ES</Fab>
@@ -67,8 +73,11 @@ const Layout = props => {
               disableFocusListener
               disableHoverListener
             >
-              <IconButton aria-label="delete">
-                <CloseIcon fontSize="large" />
+              <IconButton className={classes.tooltip} aria-label="delete">
+                <CloseIcon
+                  fontSize="large"
+                  visibility={props.location.pathname == "/" ? "hidden" : ""}
+                />
               </IconButton>
             </Tooltip>
           </div>
