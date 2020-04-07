@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@material-ui/core/Avatar";
-import Fab from "@material-ui/core/Fab";
-import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -13,32 +10,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import avatar from "./../../avatar.jpg";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  outerCard: {
-    background:
-      "linear-gradient(135deg, black 25%, transparent 25%) -50px 0, linear-gradient(225deg, black 25%, transparent 25%) -50px 0, linear-gradient(315deg, black 25%, transparent 25%), linear-gradient(45deg, black 25%, transparent 25%);",
-    backgroundSize: "2em 2em",
-    backgroundColor: "#232323"
-  },
-  cardWrapper: {
-    margin: "0% 5% 0% 5%",
-    background: "white",
-    zIndex: theme.zIndex.outerCard + 1,
-    [theme.breakpoints.up("md")]: {
-      border: "15px solid black"
-    }
-  },
-  header: {
-    marginTop: "3%",
-    display: "flex",
-    justifyItems: "center",
-    justifyContent: "space-between"
-  },
-  tooltip: {
-    margin: theme.spacing(1)
-  },
   titleWrapper: {
     display: "flex",
     justifyContent: "space-between"
@@ -68,13 +39,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Home = () => {
+const Home = props => {
   const classes = useStyles();
   // 0: EN, 1: ES
-  const [lang, setLang] = useState(0);
-
-  const firstParagraph = lang => {
-    if (lang === 0) {
+  const firstParagraph = () => {
+    if (props.lang === 0) {
       return (
         <Typography variant="body1" align="justify" paragraph>
           I'm Niv Oksenberg, welcome to my site. Since you are here, let me tell
@@ -85,7 +54,7 @@ const Home = () => {
           when it can be used.
         </Typography>
       );
-    } else if (lang === 1) {
+    } else if (props.lang === 1) {
       return (
         <Typography variant="body1" align="justify" paragraph>
           Mi nombre es Niv Oksenberg, bienvenido a mi página web. Soy un
@@ -99,19 +68,19 @@ const Home = () => {
     }
   };
 
-  const secondParagraph = lang => {
-    if (lang === 0) {
+  const secondParagraph = () => {
+    if (props.lang === 0) {
       return (
         <Typography variant="body1" align="justify" paragraph>
           I've worked in numerous projects, from applications designed for
           concurrent use by millions of users to personal (and sometimes{" "}
           <i>fun</i>) initiatives. I'm specially attracted to{" "}
           <b>big and impactful</b> projects that aspire to be used on a global
-          scale. I believe that if well used technology can make people's life
+          scale. I believe that, if well used, technology can make people's life
           better and easier. You can check some of my work <u>here</u>.
         </Typography>
       );
-    } else if (lang === 1) {
+    } else if (props.lang === 1) {
       return (
         <Typography variant="body1" align="justify" paragraph>
           He trabajado en diversos proyectos, desde aplicaciones diseñadas para
@@ -126,14 +95,14 @@ const Home = () => {
     }
   };
 
-  const thirdParagraph = lang => {
-    if (lang === 0) {
+  const thirdParagraph = () => {
+    if (props.lang === 0) {
       return (
         <Typography variant="body1" align="justify" paragraph>
           Contact me on here <b>nivoksenberg@gmail.com</b>.
         </Typography>
       );
-    } else if (lang === 1) {
+    } else if (props.lang === 1) {
       return (
         <Typography variant="body1" align="justify" paragraph>
           Escríbeme a <b>nivoksenberg@gmail.com</b>.
@@ -143,92 +112,54 @@ const Home = () => {
   };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.outerCard}>
-        <div className={classes.cardWrapper}>
-          <div className={classes.header}>
-            <div />
-            <div>
-              <Tooltip
-                className={classes.tooltip}
-                title="EN"
-                aria-label="EN"
-                onClick={() => setLang(0)}
-              >
-                <Fab size="small">EN</Fab>
-              </Tooltip>
-              <Tooltip
-                className={classes.tooltip}
-                title="ES"
-                aria-label="ES"
-                onClick={() => setLang(1)}
-              >
-                <Fab size="small">ES</Fab>
-              </Tooltip>
-            </div>
-            <Tooltip
-              className={classes.tooltip}
-              title="Delete"
-              disableFocusListener
-              disableHoverListener
-            >
-              <IconButton aria-label="delete">
-                <CloseIcon fontSize="large" />
-              </IconButton>
-            </Tooltip>
-          </div>
-
-          <div className={classes.textWrapper}>
-            <div className={classes.titleWrapper}>
-              <div>
-                <Typography variant="h2">
-                  <b>{lang === 0 ? "Hello" : "Hola"}</b>
-                </Typography>
-                <Typography variant="h2" gutterBottom>
-                  {lang === 0 ? "WORLD" : "MUNDO"}.
-                </Typography>
-              </div>
-              <div>
-                <Avatar src={avatar} className={classes.avatar} />
-              </div>
-            </div>
-            <div>
-              {firstParagraph(lang)}
-              {secondParagraph(lang)}
-              {thirdParagraph(lang)}
-            </div>
-            <div className={classes.socialMedia}>
-              <IconButton
-                href="https://www.linkedin.com/in/nivoksenberg/"
-                target="_blank"
-                rel="noopener"
-              >
-                <LinkedInIcon fontSize="large" />
-              </IconButton>
-              <IconButton
-                href="https://github.com/noksenberg"
-                target="_blank"
-                rel="noopener"
-              >
-                <GitHubIcon fontSize="large" />
-              </IconButton>
-              <IconButton
-                href="https://www.instagram.com/nivoksenberg/"
-                target="_blank"
-                rel="noopener"
-              >
-                <InstagramIcon fontSize="large" />
-              </IconButton>
-              <IconButton
-                href="https://www.facebook.com/niv.oksenberg"
-                target="_blank"
-                rel="noopener"
-              >
-                <FacebookIcon fontSize="large" />
-              </IconButton>
-            </div>
-          </div>
+    <div className={classes.textWrapper}>
+      <div className={classes.titleWrapper}>
+        <div>
+          <Typography variant="h2">
+            <b>{props.lang === 0 ? "Hello" : "Hola"}</b>
+          </Typography>
+          <Typography variant="h2" gutterBottom>
+            {props.lang === 0 ? "WORLD" : "MUNDO"}.
+          </Typography>
         </div>
+        <div>
+          <Avatar src={avatar} className={classes.avatar} />
+        </div>
+      </div>
+      <div>
+        {firstParagraph()}
+        {secondParagraph()}
+        {thirdParagraph()}
+      </div>
+      <div className={classes.socialMedia}>
+        <IconButton
+          href="https://www.linkedin.com/in/nivoksenberg/"
+          target="_blank"
+          rel="noopener"
+        >
+          <LinkedInIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          href="https://github.com/noksenberg"
+          target="_blank"
+          rel="noopener"
+        >
+          <GitHubIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          href="https://www.instagram.com/nivoksenberg/"
+          target="_blank"
+          rel="noopener"
+        >
+          <InstagramIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          href="https://www.facebook.com/niv.oksenberg"
+          target="_blank"
+          rel="noopener"
+        >
+          <FacebookIcon fontSize="large" />
+        </IconButton>
       </div>
     </div>
   );
