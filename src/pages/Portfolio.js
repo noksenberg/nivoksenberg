@@ -6,6 +6,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import fitAtHomePic from "../../assets/fit-at-home.gif";
+import imfrPic from "../../assets/imfr.gif";
 import eaglePic from "../../assets/eagle.png";
 
 const useStyles = makeStyles(theme => ({
@@ -25,10 +26,11 @@ const useStyles = makeStyles(theme => ({
     }
   },
   root: {
+    marginBottom: "5%",
     flexGrow: 1
   },
   containerRow: {
-    marginTop: "5%"
+    marginTop: "3%"
   },
   project: {
     width: "100%",
@@ -108,6 +110,44 @@ const Portfolio = props => {
                     ? "with"
                     : "con"}{" "}
                   MongoDB.
+                </Typography>
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Grid container spacing={10} className={classes.containerRow}>
+            <Grid item xs={12} lg={6} md={6} sm={12} key={2}>
+              <img className={classes.project} src={imfrPic} alt="IMFR" />
+            </Grid>
+            <Grid item xs={12} lg={6} md={6} sm={12} key={1}>
+              <div>
+                <Typography variant="h4">
+                  <b>Millenium Institute of Research</b>
+                </Typography>
+                <Typography variant="h6" paragraph>
+                  {props.lang === 0
+                    ? "Data Analyst - March 2020."
+                    : "Analista de Datos - Marzo 2020."}
+                </Typography>
+                <Typography variant="body2" align="justify" paragraph>
+                  {props.lang === 0
+                    ? `Directly assignd by the chilean Ministry of Science and Technology, the
+                    Millenium Institute of Research had the responsability of processing all the
+                    information regarding the COVID-19 outbreak. I partnered with them to achieve
+                    this titanic task, being in charge of modeling the information and scripting 
+                    its later insertion to a relational database.`
+                    : `Asignados directamente por el Ministerio de Ciencia y Tecnología, el Instituto
+                    Milenio de Investigación tenía la responsabilidad de procesar toda la información
+                    relacionada con la explosión del COVID-19. Me asocié con ellos para lograr esta
+                    tarea, modelando la información y automatizando la inserción de datos en una base
+                    de datos relacional con un script. `}
+                </Typography>
+                <Typography variant="body1">
+                  <b>Tech Stack</b>:
+                </Typography>
+                <Typography variant="body2">
+                  <span>Python {props.lang === 0 ? "and" : "y"} SQLite.</span>
                 </Typography>
               </div>
             </Grid>
