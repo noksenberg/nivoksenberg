@@ -67,7 +67,7 @@ const Home = props => {
           resolver <b>problemas complejos del mundo real</b> de manera elegante,
           eficiente y con el ser <b>humano como eje central</b> de cualquier
           solución. Un producto tecnológico es útil solamente cuando se logra
-          utilizar.
+          usar.
         </Typography>
       );
     }
@@ -115,6 +115,41 @@ const Home = props => {
     }
   };
 
+  const socialMedia = () => {
+    return (
+      <div className={classes.socialMedia}>
+        <IconButton
+          href="https://www.linkedin.com/in/nivoksenberg/"
+          target="_blank"
+          rel="noopener"
+        >
+          <LinkedInIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          href="https://github.com/noksenberg"
+          target="_blank"
+          rel="noopener"
+        >
+          <GitHubIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          href="https://www.instagram.com/nivoksenberg/"
+          target="_blank"
+          rel="noopener"
+        >
+          <InstagramIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          href="https://www.facebook.com/niv.oksenberg"
+          target="_blank"
+          rel="noopener"
+        >
+          <FacebookIcon fontSize="large" />
+        </IconButton>
+      </div>
+    );
+  };
+
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -137,39 +172,11 @@ const Home = props => {
             {secondParagraph()}
             {thirdParagraph()}
           </div>
-          <div className={classes.socialMedia}>
-            <IconButton
-              href="https://www.linkedin.com/in/nivoksenberg/"
-              target="_blank"
-              rel="noopener"
-            >
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              href="https://github.com/noksenberg"
-              target="_blank"
-              rel="noopener"
-            >
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              href="https://www.instagram.com/nivoksenberg/"
-              target="_blank"
-              rel="noopener"
-            >
-              <InstagramIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              href="https://www.facebook.com/niv.oksenberg"
-              target="_blank"
-              rel="noopener"
-            >
-              <FacebookIcon fontSize="large" />
-            </IconButton>
-          </div>
+          {socialMedia()}
         </ContentWrapper>
       </ThemeProvider>
       <Portfolio setLang={props.setLang} lang={props.lang} />
+      <ContentWrapper>{socialMedia()}</ContentWrapper>
     </div>
   );
 };
