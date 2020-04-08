@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => ({
   titleWrapper: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    wordBreak: "break-word"
   },
   avatar: {
     margin: "10%",
@@ -56,7 +57,7 @@ const Portfolio = props => {
               <b>{props.lang === 0 ? "Personal" : "Portafolio"}</b>
             </Typography>
             <Typography variant="h2">
-              {props.lang === 0 ? "PORTFOLIO" : "PERSONAL"}
+              {props.lang === 0 ? "PORTFOLIO." : "PERSONAL."}
             </Typography>
           </div>
           <div>

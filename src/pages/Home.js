@@ -9,14 +9,14 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import avatar from "./../../assets/avatar.jpg";
-import Link from "@material-ui/core/Link";
 import Portfolio from "./Portfolio";
 
 const useStyles = makeStyles(theme => ({
   titleWrapper: {
     display: "flex",
     justifyContent: "space-between",
-    alightItems: "center"
+    alightItems: "center",
+    wordBreak: "break-word"
   },
   avatar: {
     margin: "10%",
