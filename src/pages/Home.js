@@ -42,8 +42,8 @@ const Home = props => {
     if (props.lang === 0) {
       return (
         <Typography variant="body1" align="justify" paragraph>
-          I'm Niv Oksenberg, welcome to my site. Since you are here, let me tell
-          you a little bit about me. I'm a{" "}
+          I&apos;m Niv Oksenberg, welcome to my site. Since you are here, let me
+          tell you a little bit about me. I&apos;m a{" "}
           <b>Software Engineer and Data Scientist</b>, trying to use my skills
           to solve complex <b>real world problems</b> with elegant, efficient,{" "}
           <b>human centered solutions</b>. A technology product is only useful
@@ -68,12 +68,12 @@ const Home = props => {
     if (props.lang === 0) {
       return (
         <Typography variant="body1" align="justify" paragraph>
-          I've worked in numerous projects, from applications designed for
+          I&apos;ve worked in numerous projects, from applications designed for
           concurrent use by millions of users to personal (and sometimes{" "}
-          <i>fun</i>) initiatives. I'm specially attracted to{" "}
+          <i>fun</i>) initiatives. I&apos;m specially attracted to{" "}
           <b>big and impactful</b> projects that aspire to be used on a global
-          scale. I believe that, if well used, technology can make people's life
-          better and easier. You can check some of my work{" "}
+          scale. I believe that, if well used, technology can make people&apos;s
+          life better and easier. You can check some of my work{" "}
           <Link to="/portfolio">
             <u>here</u>
           </Link>
