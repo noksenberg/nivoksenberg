@@ -44,7 +44,7 @@ const Layout = props => {
     <IconButton
       className={classes.tooltip}
       aria-label="portfolio"
-      href="/portfolio"
+      href="/#portfolio"
     >
       <WorkIcon fontSize="large" />
     </IconButton>
@@ -52,7 +52,7 @@ const Layout = props => {
 
   const homeButton = () => (
     <IconButton className={classes.tooltip} aria-label="home" href="/">
-      <HomeIcon fontSize="large" />
+      <HomeIcon fontSize="large" visibility="hidden" />
     </IconButton>
   );
 

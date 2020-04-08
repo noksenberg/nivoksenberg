@@ -9,7 +9,8 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import avatar from "./../../assets/avatar.jpg";
-import { Link } from "@reach/router";
+import Link from "@material-ui/core/Link";
+import Portfolio from "./Portfolio";
 
 const useStyles = makeStyles(theme => ({
   titleWrapper: {
@@ -73,11 +74,7 @@ const Home = props => {
           <i>fun</i>) initiatives. I&apos;m specially attracted to{" "}
           <b>big and impactful</b> projects that aspire to be used on a global
           scale. I believe that, if well used, technology can make people&apos;s
-          life better and easier. You can check some of my work{" "}
-          <Link to="/portfolio">
-            <u>here</u>
-          </Link>
-          .
+          life better and easier.
         </Typography>
       );
     } else if (props.lang === 1) {
@@ -88,11 +85,7 @@ const Home = props => {
           iniciativas personales de menor tamaño. Me atraen en particular los
           proyectos con <b>ambición global</b>. Creo firmemente que la
           tecnología, si se usa de manera correcta, puede hacer la vida de las
-          personas mejor y más simple.{" "}
-          <Link to="/portfolio">
-            <u>Aquí</u>
-          </Link>{" "}
-          puedes ver una muestra de mi trabajo.
+          personas mejor y más simple.
         </Typography>
       );
     }
@@ -115,56 +108,59 @@ const Home = props => {
   };
 
   return (
-    <ContentWrapper>
-      <div className={classes.titleWrapper}>
-        <div>
-          <Typography variant="h2">
-            <b>{props.lang === 0 ? "Hello" : "Hola"}</b>
-          </Typography>
-          <Typography variant="h2" gutterBottom>
-            {props.lang === 0 ? "WORLD" : "MUNDO"}.
-          </Typography>
+    <div>
+      <ContentWrapper>
+        <div className={classes.titleWrapper}>
+          <div>
+            <Typography variant="h2">
+              <b>{props.lang === 0 ? "Hello" : "Hola"}</b>
+            </Typography>
+            <Typography variant="h2" gutterBottom>
+              {props.lang === 0 ? "WORLD" : "MUNDO"}.
+            </Typography>
+          </div>
+          <div>
+            <Avatar src={avatar} className={classes.avatar} />
+          </div>
         </div>
         <div>
-          <Avatar src={avatar} className={classes.avatar} />
+          {firstParagraph()}
+          {secondParagraph()}
+          {thirdParagraph()}
         </div>
-      </div>
-      <div>
-        {firstParagraph()}
-        {secondParagraph()}
-        {thirdParagraph()}
-      </div>
-      <div className={classes.socialMedia}>
-        <IconButton
-          href="https://www.linkedin.com/in/nivoksenberg/"
-          target="_blank"
-          rel="noopener"
-        >
-          <LinkedInIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          href="https://github.com/noksenberg"
-          target="_blank"
-          rel="noopener"
-        >
-          <GitHubIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          href="https://www.instagram.com/nivoksenberg/"
-          target="_blank"
-          rel="noopener"
-        >
-          <InstagramIcon fontSize="large" />
-        </IconButton>
-        <IconButton
-          href="https://www.facebook.com/niv.oksenberg"
-          target="_blank"
-          rel="noopener"
-        >
-          <FacebookIcon fontSize="large" />
-        </IconButton>
-      </div>
-    </ContentWrapper>
+        <div className={classes.socialMedia}>
+          <IconButton
+            href="https://www.linkedin.com/in/nivoksenberg/"
+            target="_blank"
+            rel="noopener"
+          >
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            href="https://github.com/noksenberg"
+            target="_blank"
+            rel="noopener"
+          >
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            href="https://www.instagram.com/nivoksenberg/"
+            target="_blank"
+            rel="noopener"
+          >
+            <InstagramIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            href="https://www.facebook.com/niv.oksenberg"
+            target="_blank"
+            rel="noopener"
+          >
+            <FacebookIcon fontSize="large" />
+          </IconButton>
+        </div>
+      </ContentWrapper>
+      <Portfolio setLang={props.setLang} lang={props.lang} />
+    </div>
   );
 };
 
