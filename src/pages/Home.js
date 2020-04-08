@@ -1,5 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  createMuiTheme,
+  responsiveFontSizes,
+  ThemeProvider
+} from "@material-ui/core/styles";
 import ContentWrapper from "./components/ContentWrapper";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
@@ -10,6 +15,9 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import avatar from "./../../assets/avatar.jpg";
 import Portfolio from "./Portfolio";
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const useStyles = makeStyles(theme => ({
   titleWrapper: {
@@ -37,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Home = props => {
-  const classes = useStyles();
+  const classes = useStyles(theme);
   // 0: EN, 1: ES
   const firstParagraph = () => {
     if (props.lang === 0) {
@@ -109,56 +117,58 @@ const Home = props => {
 
   return (
     <div>
-      <ContentWrapper>
-        <div className={classes.titleWrapper}>
-          <div>
-            <Typography variant="h2">
-              <b>{props.lang === 0 ? "Hello" : "Hola"}</b>
-            </Typography>
-            <Typography variant="h2" gutterBottom>
-              {props.lang === 0 ? "WORLD" : "MUNDO"}.
-            </Typography>
+      <ThemeProvider theme={theme}>
+        <ContentWrapper>
+          <div className={classes.titleWrapper}>
+            <div>
+              <Typography variant="h2">
+                <b>{props.lang === 0 ? "Hello" : "Hola"}</b>
+              </Typography>
+              <Typography variant="h2" gutterBottom>
+                {props.lang === 0 ? "WORLD" : "MUNDO"}.
+              </Typography>
+            </div>
+            <div>
+              <Avatar src={avatar} className={classes.avatar} />
+            </div>
           </div>
           <div>
-            <Avatar src={avatar} className={classes.avatar} />
+            {firstParagraph()}
+            {secondParagraph()}
+            {thirdParagraph()}
           </div>
-        </div>
-        <div>
-          {firstParagraph()}
-          {secondParagraph()}
-          {thirdParagraph()}
-        </div>
-        <div className={classes.socialMedia}>
-          <IconButton
-            href="https://www.linkedin.com/in/nivoksenberg/"
-            target="_blank"
-            rel="noopener"
-          >
-            <LinkedInIcon fontSize="large" />
-          </IconButton>
-          <IconButton
-            href="https://github.com/noksenberg"
-            target="_blank"
-            rel="noopener"
-          >
-            <GitHubIcon fontSize="large" />
-          </IconButton>
-          <IconButton
-            href="https://www.instagram.com/nivoksenberg/"
-            target="_blank"
-            rel="noopener"
-          >
-            <InstagramIcon fontSize="large" />
-          </IconButton>
-          <IconButton
-            href="https://www.facebook.com/niv.oksenberg"
-            target="_blank"
-            rel="noopener"
-          >
-            <FacebookIcon fontSize="large" />
-          </IconButton>
-        </div>
-      </ContentWrapper>
+          <div className={classes.socialMedia}>
+            <IconButton
+              href="https://www.linkedin.com/in/nivoksenberg/"
+              target="_blank"
+              rel="noopener"
+            >
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
+            <IconButton
+              href="https://github.com/noksenberg"
+              target="_blank"
+              rel="noopener"
+            >
+              <GitHubIcon fontSize="large" />
+            </IconButton>
+            <IconButton
+              href="https://www.instagram.com/nivoksenberg/"
+              target="_blank"
+              rel="noopener"
+            >
+              <InstagramIcon fontSize="large" />
+            </IconButton>
+            <IconButton
+              href="https://www.facebook.com/niv.oksenberg"
+              target="_blank"
+              rel="noopener"
+            >
+              <FacebookIcon fontSize="large" />
+            </IconButton>
+          </div>
+        </ContentWrapper>
+      </ThemeProvider>
       <Portfolio setLang={props.setLang} lang={props.lang} />
     </div>
   );
