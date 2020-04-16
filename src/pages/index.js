@@ -3,7 +3,7 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import { Router } from "@reach/router";
 import LayoutWrapper from "../components/LayoutWrapper";
 import Layout from "../components/Layout";
-import Home from "./Home";
+import Home from "../components/Home";
 import SEO from "../components/SEO";
 
 const App = () => {
@@ -28,7 +28,7 @@ const AppWithErrorBoundaries = props => {
   return (
     <ErrorBoundary>
       <>
-        <SEO /> 
+        <SEO />
         <App {...props} />
       </>
     </ErrorBoundary>
