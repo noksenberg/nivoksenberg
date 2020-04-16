@@ -5,7 +5,7 @@ import {
   responsiveFontSizes,
   ThemeProvider
 } from "@material-ui/core/styles";
-import ContentWrapper from "./components/ContentWrapper";
+import ContentWrapper from "../components/ContentWrapper";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";

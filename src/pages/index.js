@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "../components/ErrorBoundary";
 import { Router } from "@reach/router";
-import LayoutWrapper from "./LayoutWrapper";
-import Layout from "./Layout";
-import Home from "./pages/Home";
+import LayoutWrapper from "../components/LayoutWrapper";
+import Layout from "../components/Layout";
+import Home from "./Home";
 
 const App = () => {
   const [lang, setLang] = useState(0);
@@ -32,4 +31,4 @@ const AppWithErrorBoundaries = props => {
   );
 };
 
-ReactDOM.render(<AppWithErrorBoundaries />, document.getElementById("root"));
+export default AppWithErrorBoundaries;

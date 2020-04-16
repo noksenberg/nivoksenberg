@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/runtime": "^7.9.2",
     "@reach/router": "^1.2.1",
+    "gatsby": "^2.20.22",
     "material-ui-image": "^3.2.3",
     "react": "^16.3.0",
     "react-dom": "^16.8.4"
@@ -33,9 +34,8 @@
   },
   "scripts": {
     "clear-build-cache": "rm -rf .cache/ dist/",
-    "build": "parcel build src/index.html --public-url ./",
-    "dev": "parcel src/index.html",
-    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
+    "build": "gatsby build",
+    "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -45,7 +45,7 @@
     "url": "git+https://github.com/noksenberg/nivoksenberg.git"
   },
   "author": "Niv Oksenberg",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/noksenberg/nivoksenberg/issues"
   },
