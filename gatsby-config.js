@@ -1,8 +1,9 @@
 module.exports = {
     siteMetadata: {
       title: `Niv Oksenberg`,
-      description: `Personal Website`,
+      description: `Niv Oksenberg's personal website`,
       author: `@noksenberg`,
+      url: `https://nivoksenberg.com`
     },
     plugins: [
       {
@@ -15,7 +16,6 @@ module.exports = {
           //   injectFirst: true,
           // },
         },
-        // 'gatsby-plugin-styled-components',
       },
     ],
   }

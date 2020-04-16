@@ -4,6 +4,7 @@ import { Router } from "@reach/router";
 import LayoutWrapper from "../components/LayoutWrapper";
 import Layout from "../components/Layout";
 import Home from "./Home";
+import SEO from "../components/SEO";
 
 const App = () => {
   const [lang, setLang] = useState(0);
@@ -26,7 +27,10 @@ const App = () => {
 const AppWithErrorBoundaries = props => {
   return (
     <ErrorBoundary>
-      <App {...props} />
+      <>
+        <SEO /> 
+        <App {...props} />
+      </>
     </ErrorBoundary>
   );
 };
