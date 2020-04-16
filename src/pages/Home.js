@@ -167,7 +167,7 @@ const Home = props => {
                 className={classes.avatar}
                 src={"/avatar-large.jpg"}
                 srcSet={
-                  "/avatar-large.jpg 6000w, /avatar-medium.jpg 600w, /avatar-small.jpg 300w"
+                  "/avatar-large.jpg 900w, /avatar-medium.jpg 600w, /avatar-small.jpg 300w"
                 }
                 size={classes.avatar.width}
               />
