@@ -10,9 +10,6 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import fitAtHomePic from "../../assets/fit-at-home.gif";
-import imfrPic from "../../assets/imfr.gif";
-import eaglePic from "../../assets/eagle.png";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -82,7 +79,7 @@ const Portfolio = props => {
                 <Grid item xs={12} lg={6} md={6} sm={12} key={10}>
                   <img
                     className={classes.project}
-                    src={fitAtHomePic}
+                    src={'/fit-at-home.gif'}
                     alt="Fit at Home"
                   />
                 </Grid>
@@ -128,7 +125,7 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={12}>
-                  <img className={classes.project} src={imfrPic} alt="IMFR" />
+                  <img className={classes.project} src={'imfr.gif'} alt="IMFR" />
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={13}>
                   <div>
@@ -171,7 +168,7 @@ const Portfolio = props => {
                   <Link href="https://www.geteagle.com.au/" target="_blank">
                     <img
                       className={classes.project}
-                      src={eaglePic}
+                      src={'eagle.png'}
                       alt="Eagle Software"
                     />
                   </Link>

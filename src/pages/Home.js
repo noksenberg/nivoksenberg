@@ -13,7 +13,6 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import avatar from "./../../assets/avatar.jpg";
 import Portfolio from "./Portfolio";
 
 let theme = createMuiTheme();
@@ -164,7 +163,7 @@ const Home = props => {
               </Typography>
             </div>
             <div>
-              <Avatar src={avatar} className={classes.avatar} />
+              <Avatar src={'/avatar.jpg'} className={classes.avatar} />
             </div>
           </div>
           <div>
