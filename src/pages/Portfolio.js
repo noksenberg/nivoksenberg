@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import is from "is_js";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -53,6 +54,38 @@ const useStyles = makeStyles(theme => ({
 const Portfolio = props => {
   const classes = useStyles(theme);
 
+  const fitAtHomeMedia = () => {
+    if (!is.safari()) {
+      return (
+        <video className={classes.project} autoPlay loop muted playsInline>
+          <source src={"/fit-at-home.webm"} type="video/webm" />
+          <source src={"/fit-at-home.mp4"} type="video/mp4" />
+        </video>
+      );
+    }
+
+    return (
+      <img
+        className={classes.project}
+        src={"/fit-at-home.gif"}
+        alt="Fit At Home"
+      />
+    );
+  };
+
+  const imfrMedia = () => {
+    if (!is.safari()) {
+      return (
+        <video className={classes.project} autoPlay loop muted playsInline>
+          <source src={"/imfr.webm"} type="video/webm" />
+          <source src={"/imfr.mp4"} type="video/mp4" />
+        </video>
+      );
+    }
+
+    return <img className={classes.project} src={"/imfr.gif"} alt="imfr" />;
+  };
+
   return (
     <div id="portfolio">
       <ThemeProvider theme={theme}>
@@ -81,16 +114,7 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={10}>
-                  <video
-                    className={classes.project}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    <source src={"/fit-at-home.webm"} type="video/webm" />
-                    <source src={"/fit-at-home.mp4"} type="video/mp4" />
-                  </video>
+                  {fitAtHomeMedia()}
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={11}>
                   <div>
@@ -134,16 +158,7 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={12}>
-                  <video
-                    className={classes.project}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    <source src={"/imfr.webm"} type="video/webm" />
-                    <source src={"/imfr.mp4"} type="video/mp4" />
-                  </video>
+                  {imfrMedia()}
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={13}>
                   <div>
