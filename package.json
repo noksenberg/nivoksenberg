@@ -8,6 +8,7 @@
     "@reach/router": "^1.2.1",
     "gatsby": "^2.20.22",
     "gatsby-plugin-material-ui": "^2.1.6",
+    "gatsby-plugin-react-helmet": "^3.2.3",
     "gatsby-plugin-sitemap": "^2.3.3",
     "material-ui-image": "^3.2.3",
     "react": "^16.3.0",
