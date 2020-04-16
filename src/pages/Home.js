@@ -163,7 +163,14 @@ const Home = props => {
               </Typography>
             </div>
             <div>
-              <Avatar src={'/avatar.jpg'} className={classes.avatar} />
+              <Avatar
+                className={classes.avatar}
+                src={"/avatar-large.jpg"}
+                srcSet={
+                  "/avatar-large.jpg 6000w, /avatar-medium.jpg 600w, /avatar-small.jpg 300w"
+                }
+                size={classes.avatar.width}
+              />
             </div>
           </div>
           <div>

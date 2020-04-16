@@ -77,11 +77,16 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={10}>
-                  <img
+                  <video
                     className={classes.project}
-                    src={'/fit-at-home.gif'}
-                    alt="Fit at Home"
-                  />
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src={"/fit-at-home.webm"} type="video/webm" />
+                    <source src={"/fit-at-home.mp4"} type="video/mp4" />
+                  </video>
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={11}>
                   <div>
@@ -125,7 +130,16 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={12}>
-                  <img className={classes.project} src={'imfr.gif'} alt="IMFR" />
+                  <video
+                    className={classes.project}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src={"/imfr.webm"} type="video/webm" />
+                    <source src={"/imfr.mp4"} type="video/mp4" />
+                  </video>
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={13}>
                   <div>
@@ -168,7 +182,11 @@ const Portfolio = props => {
                   <Link href="https://www.geteagle.com.au/" target="_blank">
                     <img
                       className={classes.project}
-                      src={'eagle.png'}
+                      src={"/eagle-large.jpg"}
+                      srcSet={
+                        "/eagle-large.jpg 1354w, /eagle-medium.jpg 673w, /eagle-small.jpg 337w"
+                      }
+                      size={classes.project.width}
                       alt="Eagle Software"
                     />
                   </Link>
