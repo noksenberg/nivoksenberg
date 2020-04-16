@@ -165,11 +165,11 @@ const Home = props => {
             <div>
               <Avatar
                 className={classes.avatar}
-                src={"/avatar-large.jpg"}
                 srcSet={
-                  "/avatar-large.jpg 900w, /avatar-medium.jpg 600w, /avatar-small.jpg 300w"
+                  "/avatar-small.jpg 300w, /avatar-medium.jpg 600w, /avatar-large.jpg 900w"
                 }
-                size={classes.avatar.width}
+                src={"/avatar-large.jpg"}
+                sizes={classes.avatar.width}
               />
             </div>
           </div>

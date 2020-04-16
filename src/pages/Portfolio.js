@@ -68,8 +68,12 @@ const Portfolio = props => {
             </div>
             <div>
               <Avatar
-                src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
                 className={classes.avatar}
+                srcSet={
+                  "/do-more-small.jpeg 150w, /do-more-medium.jpeg 500w, do-more-large.jpeg 1000w"
+                }
+                src={"/do-more-large.jpeg"}
+                sizes={classes.avatar.width}
               />
             </div>
           </div>
@@ -182,11 +186,11 @@ const Portfolio = props => {
                   <Link href="https://www.geteagle.com.au/" target="_blank">
                     <img
                       className={classes.project}
-                      src={"/eagle-large.jpg"}
                       srcSet={
-                        "/eagle-large.jpg 1354w, /eagle-medium.jpg 673w, /eagle-small.jpg 337w"
+                        "/eagle-small.jpg 337w, /eagle-medium.jpg 673w, /eagle-large.jpg 1354w"
                       }
-                      size={classes.project.width}
+                      src={"/eagle-large.jpg"}
+                      sizes={classes.project.width}
                       alt="Eagle Software"
                     />
                   </Link>
