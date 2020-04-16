@@ -3,7 +3,7 @@ module.exports = {
       title: `Niv Oksenberg`,
       description: `Niv Oksenberg's personal website`,
       author: `@noksenberg`,
-      url: `https://nivoksenberg.com`
+      siteUrl: `https://nivoksenberg.com`
     },
     plugins: [
       {
@@ -17,5 +17,6 @@ module.exports = {
           // },
         },
       },
+      `gatsby-plugin-sitemap`
     ],
   }
