@@ -1,31 +1,33 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
+import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({ title, description, article }) => {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+  const { pathname } = useLocation();
+  const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
     titleTemplate,
     defaultDescription,
-    siteUrl,
-  } = site.siteMetadata
+    siteUrl
+  } = site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${pathname}`,
-  }
+    url: `${siteUrl}${pathname}`
+  };
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <meta 
+      <html lang="en" />
+
+      <meta
         name="google-site-verification"
-        content="fiqtyFBJc518s__GufYPORhcyYP0ULUGPaLQeLSzwbI" 
+        content="fiqtyFBJc518s__GufYPORhcyYP0ULUGPaLQeLSzwbI"
       />
 
       <meta name="description" content={seo.description} />
@@ -40,22 +42,22 @@ const SEO = ({ title, description, article }) => {
         <meta property="og:description" content={seo.description} />
       )}
     </Helmet>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;
 
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  article: PropTypes.bool,
-}
+  article: PropTypes.bool
+};
 
 SEO.defaultProps = {
   title: null,
   description: null,
-  article: false,
-}
+  article: false
+};
 
 const query = graphql`
   query SEO {
@@ -67,4 +69,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

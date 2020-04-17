@@ -5,7 +5,7 @@ import {
   responsiveFontSizes,
   ThemeProvider
 } from "@material-ui/core/styles";
-import ContentWrapper from "../components/ContentWrapper";
+import ContentWrapper from "./ContentWrapper";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
@@ -102,6 +102,7 @@ const Portfolio = props => {
             <div>
               <Avatar
                 className={classes.avatar}
+                alt="Do More"
                 srcSet={
                   "/do-more-small.jpeg 150w, /do-more-medium.jpeg 500w, do-more-large.jpeg 1000w"
                 }

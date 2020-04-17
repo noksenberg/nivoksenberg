@@ -5,7 +5,7 @@ import {
   responsiveFontSizes,
   ThemeProvider
 } from "@material-ui/core/styles";
-import ContentWrapper from "../components/ContentWrapper";
+import ContentWrapper from "./ContentWrapper";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
@@ -119,6 +119,7 @@ const Home = props => {
       <div className={classes.socialMedia}>
         <IconButton
           href="https://www.linkedin.com/in/nivoksenberg/"
+          aria-label="linkedin profile"
           target="_blank"
           rel="noopener"
         >
@@ -126,6 +127,7 @@ const Home = props => {
         </IconButton>
         <IconButton
           href="https://github.com/noksenberg"
+          aria-label="github profile"
           target="_blank"
           rel="noopener"
         >
@@ -133,6 +135,7 @@ const Home = props => {
         </IconButton>
         <IconButton
           href="https://www.instagram.com/nivoksenberg/"
+          aria-label="instagram profile"
           target="_blank"
           rel="noopener"
         >
@@ -140,6 +143,7 @@ const Home = props => {
         </IconButton>
         <IconButton
           href="https://www.facebook.com/niv.oksenberg"
+          aria-label="facebook profile"
           target="_blank"
           rel="noopener"
         >
@@ -165,6 +169,7 @@ const Home = props => {
             <div>
               <Avatar
                 className={classes.avatar}
+                alt="avatar"
                 srcSet={
                   "/avatar-small.jpg 300w, /avatar-medium.jpg 600w, /avatar-large.jpg 900w"
                 }
