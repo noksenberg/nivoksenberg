@@ -121,7 +121,7 @@ const Home = props => {
           href="https://www.linkedin.com/in/nivoksenberg/"
           aria-label="linkedin profile"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <LinkedInIcon fontSize="large" />
         </IconButton>
@@ -129,7 +129,7 @@ const Home = props => {
           href="https://github.com/noksenberg"
           aria-label="github profile"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <GitHubIcon fontSize="large" />
         </IconButton>
@@ -137,7 +137,7 @@ const Home = props => {
           href="https://www.instagram.com/nivoksenberg/"
           aria-label="instagram profile"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <InstagramIcon fontSize="large" />
         </IconButton>
@@ -145,7 +145,7 @@ const Home = props => {
           href="https://www.facebook.com/niv.oksenberg"
           aria-label="facebook profile"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <FacebookIcon fontSize="large" />
         </IconButton>

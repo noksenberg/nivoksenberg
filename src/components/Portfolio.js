@@ -199,7 +199,11 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={14}>
-                  <Link href="https://www.geteagle.com.au/" target="_blank">
+                  <Link
+                    href="https://www.geteagle.com.au/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className={classes.project}
                       srcSet={
