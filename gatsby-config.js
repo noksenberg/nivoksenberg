@@ -18,6 +18,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-163871634-1X"
+      }
+    }
   ]
 };
