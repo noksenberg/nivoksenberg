@@ -54,12 +54,12 @@ const useStyles = makeStyles(theme => ({
 const Portfolio = props => {
   const classes = useStyles(theme);
 
-  const fitAtHomeMedia = () => {
+  const mediaMapper = mediaFile => {
     if (!is.safari()) {
       return (
         <video className={classes.project} autoPlay loop muted playsInline>
-          <source src={"/fit-at-home.webm"} type="video/webm" />
-          <source src={"/fit-at-home.mp4"} type="video/mp4" />
+          <source src={`/${mediaFile}.webm`} type="video/webm" />
+          <source src={`/${mediaFile}.mp4`} type="video/mp4" />
         </video>
       );
     }
@@ -67,23 +67,10 @@ const Portfolio = props => {
     return (
       <img
         className={classes.project}
-        src={"/fit-at-home.gif"}
-        alt="Fit At Home"
+        src={`/${mediaFile}.gif`}
+        alt={mediaFile}
       />
     );
-  };
-
-  const imfrMedia = () => {
-    if (!is.safari()) {
-      return (
-        <video className={classes.project} autoPlay loop muted playsInline>
-          <source src={"/imfr.webm"} type="video/webm" />
-          <source src={"/imfr.mp4"} type="video/mp4" />
-        </video>
-      );
-    }
-
-    return <img className={classes.project} src={"/imfr.gif"} alt="imfr" />;
   };
 
   return (
@@ -115,7 +102,60 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={10}>
-                  {fitAtHomeMedia()}
+                  <img
+                    className={classes.project}
+                    src={"/test_kor.png"}
+                    sizes={classes.project.width}
+                    alt="TEST KOR"
+                  />
+                </Grid>
+                <Grid item xs={12} lg={6} md={6} sm={12} key={11}>
+                  <div>
+                    <Typography variant="h4">
+                      <b>Test KOR</b>
+                    </Typography>
+                    <Typography variant="h6" paragraph>
+                      {props.lang === 0
+                        ? "Software Lead - May 2020."
+                        : "Líder de Desarrollo - Mayo 2020."}
+                    </Typography>
+                    <Typography variant="body2" align="justify" paragraph>
+                      {props.lang === 0
+                        ? `Test KOR is a new testing system to detect COVID-19 patients. The 
+                        platform is build to support massive testing in client businesses, along
+                        with stats analysis and management of users and internal 
+                        data.`
+                        : `Test KOR es un nuevo sistema innovador para detectar COVID-19.
+                        La plataforma permite la realización masiva del test en empresas clientes, 
+                        análisis de estadísticas y administración de usuarios y sedes.`}
+                    </Typography>
+                    <Typography variant="body1">
+                      <b>Tech Stack</b>:
+                    </Typography>
+                    <Typography variant="body2">
+                      <span>
+                        Frontend: React {props.lang === 0 ? "and" : "y"}{" "}
+                        MaterialUI.
+                      </span>
+                      <br />
+                      <span>
+                        Backend: Django {props.lang === 0 ? "with" : "con"}{" "}
+                      </span>
+                      PostgreSQL.
+                      <br />
+                      {props.lang === 0
+                        ? "Infrastructure:"
+                        : "Infraestructura:"}{" "}
+                      AWS Amplify + AWS Lambda.
+                    </Typography>
+                  </div>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container spacing={10} className={classes.containerRow}>
+                <Grid item xs={12} lg={6} md={6} sm={12} key={10}>
+                  {mediaMapper("fit-at-home")}
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={11}>
                   <div>
@@ -159,7 +199,7 @@ const Portfolio = props => {
             <Grid item xs={12}>
               <Grid container spacing={10} className={classes.containerRow}>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={12}>
-                  {imfrMedia()}
+                  {mediaMapper("imfr")}
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12} key={13}>
                   <div>
