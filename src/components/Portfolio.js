@@ -134,12 +134,13 @@ const Portfolio = props => {
                     </Typography>
                     <Typography variant="body2">
                       <span>
-                        Frontend: React {props.lang === 0 ? "and" : "y"}{" "}
-                        MaterialUI.
+                        Frontend: React, GraphQL{" "}
+                        {props.lang === 0 ? "and" : "y"} MaterialUI.
                       </span>
                       <br />
                       <span>
-                        Backend: Django {props.lang === 0 ? "with" : "con"}{" "}
+                        Backend: Django, GraphQL{" "}
+                        {props.lang === 0 ? "and" : "y"}{" "}
                       </span>
                       PostgreSQL.
                       <br />
@@ -185,7 +186,7 @@ const Portfolio = props => {
                     </Typography>
                     <Typography variant="body2">
                       <span>
-                        Frontend: React {props.lang === 0 ? "and" : "y"}{" "}
+                        Frontend: React{props.lang === 0 ? "and" : "y"}{" "}
                         MaterialUI.
                       </span>
                       <br />
