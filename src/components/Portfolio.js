@@ -121,11 +121,10 @@ const Portfolio = props => {
                     </Typography>
                     <Typography variant="body2" align="justify" paragraph>
                       {props.lang === 0
-                        ? `Test KOR is a new testing system to detect COVID-19 patients. The 
-                        platform is build to support massive testing in client businesses, along
-                        with stats analysis and management of users and internal 
-                        data.`
-                        : `Test KOR es un nuevo sistema innovador para detectar COVID-19.
+                        ? `KOR is a new test to detect COVID-19 patients. The platform is
+                        designed to support massive testing in client businesses, along
+                        with stats analysis and data management.`
+                        : `KOR es un nuevo sistema innovador para detectar COVID-19.
                         La plataforma permite la realización masiva del test en empresas clientes, 
                         análisis de estadísticas y administración de usuarios y sedes.`}
                     </Typography>
@@ -147,7 +146,7 @@ const Portfolio = props => {
                       {props.lang === 0
                         ? "Infrastructure:"
                         : "Infraestructura:"}{" "}
-                      AWS Amplify + AWS Lambda.
+                      AWS Amplify + AWS EC2.
                     </Typography>
                   </div>
                 </Grid>
